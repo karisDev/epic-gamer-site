@@ -1,3 +1,3 @@
-### Epic Gamer Website University project
+# Epic Gamer Website University project
 
-# Made with ReactJS and MySQL
+### Made with ReactJS and MySQL
