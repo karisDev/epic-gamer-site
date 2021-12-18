@@ -1,6 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from "typeorm";
+import CreateUserDto from './user.create.dto';
 import User from './user.entity';
 
 @Injectable()
@@ -15,5 +16,11 @@ export class UserService {
         }
 
         throw new HttpException('User with this ID does not exist', HttpStatus.NOT_FOUND);
+    }
+    // создание новой записи пользователя
+    async create(userData: CreateUserDto) {
+        const newUser = await this.userRepo.create(userData);
+        await this.userRepo.save(newUser);
+        return newUser;
     }
 }
