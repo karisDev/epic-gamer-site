@@ -8,7 +8,7 @@ import mysqlErrorCodes from 'src/database/mysqlErrorCodes';
 export class AuthService {
     
     constructor(private readonly userService: UserService) {}
-
+    
     async register({password, email}: CreateUserDto) {
         // валидация пароля хэшэм bcrypt
         try{
