@@ -49,10 +49,14 @@ export class AuthService {
     // аутентификация после логина
     public getCookieWithJwtToken(user: User) {
         const payload: TokenPayload = { user };
-        const token = this.jwtService.sign({ payload });
+        const token = this.jwtService.sign(payload);
         return `Authentication=${token}; HttpOnly; Path=/; Max-Age=${this.configService.get(
             'JWT_EXPIRATION_TIME'
             )}`;
+    }
+
+    public getCookieForLogout() {
+        return `Authentication=; HttpOnly; Path=/; Max-Age:0`;
     }
 
     async verifyPassword(pass1: string, pass2: string) {

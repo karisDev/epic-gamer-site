@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
+import { CollectionsModule } from './collections/collections.module';
 
 // decorator
 @Module({
@@ -19,7 +20,7 @@ import { AuthModule } from './auth/auth.module';
       JWT_SECRET: Joi.string().required(),
       JWT_EXPIRATION_TIME: Joi.string().required(),
     })
-  }), UserModule, AuthModule],
+  }), UserModule, AuthModule, CollectionsModule],
   controllers: [AppController],
   providers: [AppService],
 })
