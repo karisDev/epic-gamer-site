@@ -17,6 +17,16 @@ export class UserService {
 
         throw new HttpException('User with this ID does not exist', HttpStatus.NOT_FOUND);
     }
+
+    async findByEmail(email: string) {
+        const user = await this.userRepo.findOne({ email });
+        if(user) {
+            return user;
+        }
+
+        throw new HttpException("User does not exit", HttpStatus.NOT_FOUND);
+    }
+
     // создание новой записи пользователя
     async create(userData: CreateUserDto) {
         const newUser = await this.userRepo.create(userData);
