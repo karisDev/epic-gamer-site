@@ -1,6 +1,7 @@
 import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react'
+import LoginForm from '../src/common/auth/login/Login.form';
 
 const useStyles = makeStyles({
     loginContainer: {
@@ -17,7 +18,7 @@ interface LoginProps {
 const Login: React.FC<LoginProps> = ({}) => {
     const classes = useStyles();
     return (<Container className={classes.loginContainer}>
-        <div>Asd</div>
+        <LoginForm />
     </Container>);
 }
 
