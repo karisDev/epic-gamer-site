@@ -19,7 +19,6 @@ const theme = createTheme({
     }
   },
   palette: {
-   
     primary: {
       main: '#556cd6',
     },
@@ -34,6 +33,11 @@ const theme = createTheme({
       default: '#fff',
     },
   },
+  props: {
+    MuiContainer: {
+      maxWidth: false,
+    }
+  }
 });
 
 export default theme;

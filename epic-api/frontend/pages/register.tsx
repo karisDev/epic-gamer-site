@@ -1,7 +1,7 @@
 import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react'
-import LoginForm from '../src/common/auth/login/Login.form';
+import RegisterForm from '../src/common/auth/register/Register.form';
 
 /*
         margin: '0',
@@ -15,7 +15,7 @@ import LoginForm from '../src/common/auth/login/Login.form';
         height: '100vh',
 */
 const useStyles = makeStyles({
-    loginContainer: {
+    registerContainer: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -25,16 +25,16 @@ const useStyles = makeStyles({
     }
 })
 
-interface LoginProps {
+interface RegisterProps {
 
 }
-
-const Login: React.FC<LoginProps> = ({}) => {
+//
+const Register: React.FC<RegisterProps> = ({}) => {
     const classes = useStyles();
     return (
-    <Container className={classes.loginContainer}>
-        <LoginForm />
+    <Container className={classes.registerContainer}>
+        <RegisterForm />
     </Container>);
 }
 
-export default Login
+export default Register
